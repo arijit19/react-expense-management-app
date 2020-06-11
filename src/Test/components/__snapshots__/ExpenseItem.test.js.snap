@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Expense item component 1`] = `
+<div>
+  <h3>
+    <Link
+      to="/edit/:1"
+    >
+      Description
+    </Link>
+     : 
+    Rent
+  </h3>
+  <p>
+    Amount       : 
+    20000
+  </p>
+  <p>
+    CreateAt     : 
+    1st Jan 1970
+  </p>
+</div>
+`;

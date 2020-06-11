@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Header renderer 1`] = `
+<header>
+  <h1>
+    Expense Tracker
+  </h1>
+  <p>
+    <NavLink
+      activeClassName="active-class"
+      exact={true}
+      to="/"
+    >
+      Home Page
+    </NavLink>
+  </p>
+  <p>
+    <NavLink
+      activeClassName="active-class"
+      to="/create"
+    >
+      Add Expense
+    </NavLink>
+  </p>
+  <p>
+    <NavLink
+      activeClassName="active-class"
+      to="/help"
+    >
+      Help Page
+    </NavLink>
+  </p>
+</header>
+`;
