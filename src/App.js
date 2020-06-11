@@ -10,18 +10,14 @@ import {Provider} from 'react-redux';
 
 import AppRouter from './AppRouter/AppRouter.js';
 import ConfigStore from './Redux/store/Store.js';
-import ExpenseSelector from './Redux/selectors/ExpenseSelector.js'
-
-// import {SetEndDate, SetStartDate, SetTextFilter, SortByAmount, SortByDate} from './Redux/ActionGenerations/FilterActionGenerator/FilterActions.js'
-// import {AddExpense, RemoveExpense, EditExpense} from './Redux/ActionGenerations/ExpenseActionGenerator/ExpenseActions.js'
 
 const store = ConfigStore;
 
-store.subscribe(()=>{
-  const state = store.getState();
-  const view = ExpenseSelector(state.expenses, state.filters);
-  // console.log(view);
-});
+// store.subscribe(()=>{
+//   const state = store.getState();
+//   const view = ExpenseSelector(state.expenses, state.filters);
+//   // console.log(view);
+// });
 
 class App extends React.Component {
   render(){
