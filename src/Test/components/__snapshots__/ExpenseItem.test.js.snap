@@ -13,7 +13,7 @@ exports[`Test Expense item component 1`] = `
   </h3>
   <p>
     Amount       : 
-    20000
+    $20,000.0000
   </p>
   <p>
     CreateAt     : 
