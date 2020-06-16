@@ -4,12 +4,12 @@ import {shallow} from 'enzyme';
 import {CreateExpense} from '../../components/CreateExpensePage.js'
 import expenses from '../fixtures/Expense.js'
 
-let AddExpenseSpy, historySpy, wrapper;
+let startAddExpenseSpy, historySpy, wrapper;
 
 beforeEach(()=>{
-    AddExpenseSpy = jest.fn();
+    startAddExpenseSpy = jest.fn();
      historySpy = {push: jest.fn()}
-     wrapper = shallow(<CreateExpense addExpense={AddExpenseSpy} history={historySpy}/>);
+     wrapper = shallow(<CreateExpense startAddExpense={startAddExpenseSpy} history={historySpy}/>);
 });
 
 test('Testing Adding Expences component render', ()=>{   
@@ -19,5 +19,5 @@ test('Testing Adding Expences component render', ()=>{
 test('Testing Adding Expences component when form is submited', ()=>{
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[0]);
     expect(historySpy.push).toHaveBeenLastCalledWith('/');
-    expect(AddExpenseSpy).toHaveBeenLastCalledWith(expenses[0]);
+    expect(startAddExpenseSpy).toHaveBeenLastCalledWith(expenses[0]);
 });

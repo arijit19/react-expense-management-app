@@ -11,6 +11,8 @@ import {Provider} from 'react-redux';
 import AppRouter from './AppRouter/AppRouter.js';
 import ConfigStore from './Redux/store/Store.js';
 
+import './firebase/firebase.js';
+
 const store = ConfigStore;
 
 // store.subscribe(()=>{
@@ -18,6 +20,9 @@ const store = ConfigStore;
 //   const view = ExpenseSelector(state.expenses, state.filters);
 //   // console.log(view);
 // });
+
+console.log(process.env.NODE_ENV);
+
 
 class App extends React.Component {
   render(){

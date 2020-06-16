@@ -13,3 +13,4 @@ const Dashboard = ()=>(
 );
 
 export default Dashboard;
+console.log(process.env.NODE_ENV);

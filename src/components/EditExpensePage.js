@@ -8,7 +8,7 @@ import {EditExpense, RemoveExpense} from '../Redux/Actions/ExpenseActions.js'
 export class EditExpensePage extends React.Component {
 
     onSubmit = (expense)=> {
-        console.log(expense);
+        // console.log(expense);
         
         this.props.editExpense(this.props.match.params.id.toString().slice(1),expense);
         this.props.history.push('/');
