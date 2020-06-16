@@ -2,7 +2,8 @@ import configMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import {database} from '../../../firebase/firebase.js'
-import { StartAddExpense, AddExpense, RemoveExpense, EditExpense, FetchExpense, StartFetchExpense} from '../../../Redux/Actions/ExpenseActions.js'
+import { StartAddExpense, AddExpense, RemoveExpense, 
+    EditExpense, FetchExpense, StartFetchExpense, StartRemoveExpense, StartEditExpense} from '../../../Redux/Actions/ExpenseActions.js'
 import expenses from '../../fixtures/Expense.js'
 
 const createMockStore = configMockStore([thunk]);
@@ -23,6 +24,18 @@ test('Testing to remove Expense item fron list',()=>{
     });
 });
 
+test('Testing to remove Expense with async action', async function(done){
+    const store = createMockStore({});
+    await store.dispatch(StartRemoveExpense({id:1}));
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+        type: 'REMOVE_EXPENSE',
+        id: 1
+    });
+    // await database.ref(`exp`)
+    done()
+});
+
 test('Testing to edit of Expense item from list',()=>{
     expect(EditExpense  ('12345', {
         description: 'Rent',
@@ -35,6 +48,22 @@ test('Testing to edit of Expense item from list',()=>{
             amount: 50
         }
     });
+});
+
+test('Testing to edit Expense from firebase with async action', async function(done){
+    const id =expenses[0].id;
+    const update = { amount: 9};
+    const store = createMockStore({});
+    await store.dispatch(StartEditExpense(id,update));
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+        type: 'EDIT_EXPENSE',
+        id,
+        update
+    })
+    const snapshot = await database.ref(`expenses/${id}`).once('value');
+    expect(snapshot.val().amount).toBe(update.amount)
+    done()
 });
 
 test('Testing to add Expense item in to the list.(With a expense obj as argument)',()=>{
@@ -96,7 +125,7 @@ test('Testing to add Expense call to database with async action with default val
     done();
 });
 
-test('Testing to fetch Expense call to database with data', async function(done){
+test('Testing to fetch Expense call to database with data', (done)=>{
     const actions = FetchExpense(expenses);
     expect(actions).toEqual({
         type: 'FETCH_EXPENSE',
@@ -115,4 +144,5 @@ test('Testing to fetch Expense call to firebase database with async action', asy
     })
     done()
 })
+
 
