@@ -17,7 +17,7 @@ export const startAddExpense = (expenseData={})=> {
         } = expenseData;
     
         const expense = { description, note, amount,createdAt };
-        const ref = await database.ref('expense').push(expense);
+        const ref = await database.ref('expenses').push(expense);
         // console.log({
         //     id: ref.key,
         //     ...expense
