@@ -36,6 +36,15 @@ test('Testing expense reducer by removing element',()=>{
     expect(res).toEqual(output);
 })
 
+test('Testing expense reducer by fetching elements',()=>{
+    const action = {
+        type: 'FETCH_EXPENSE',
+        expenses
+    }
+    const res = ExpenseReducer(expenses,action);
+    expect(res).toEqual(expenses)
+})
+
 test('Testing expense reducer by removing element without a valid id',()=>{
     const action = {
         type:'REMOVE_EXPENSE',

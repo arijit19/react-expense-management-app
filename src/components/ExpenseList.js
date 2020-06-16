@@ -15,7 +15,7 @@ export const ExpenseList = (props) => (
 
 const mapStateToProps = (state)=> {
     return {
-        expenses: ExpenseSelector(state.expenses,state.filters) 
+        expenses: state.expenses ? ExpenseSelector(state.expenses,state.filters) : []
     }
 }
 

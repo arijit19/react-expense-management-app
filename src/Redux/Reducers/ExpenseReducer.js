@@ -24,6 +24,8 @@ const ExpenseReducer = (state = expenseReducerDefaultState, action)=>{
                 }
                 return expense;
             })
+        case 'FETCH_EXPENSE':
+            return action.expenses
         default:
             return state;
     }

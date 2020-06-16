@@ -13,9 +13,11 @@ export const ExpensesSummary = (props)=> {
 )};
 
 const mapStateToProps = (state)=> {
+    console.log(state);
+    
     return {
         expensesTotal : getExpenseTotal(state.expenses),
-        expensesCount : state.expenses.length
+        expensesCount : state.expenses ? state.expenses.length : 0
     }
 }
 

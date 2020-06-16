@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import {database} from '../../../firebase/firebase.js'
+import {database} from '../../../firebase/firebase.js';
+
 const AddExpense = (expense)=>(
     {
         type: 'ADD_EXPENSE',

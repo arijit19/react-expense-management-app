@@ -13,7 +13,7 @@ import ConfigStore from './Redux/store/Store.js';
 
 import './firebase/firebase.js';
 
-const store = ConfigStore;
+export const store = ConfigStore;
 
 // store.subscribe(()=>{
 //   const state = store.getState();
