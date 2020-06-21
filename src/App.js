@@ -10,32 +10,29 @@ import {Provider} from 'react-redux';
 
 import AppRouter from './AppRouter/AppRouter.js';
 import ConfigStore from './Redux/store/Store.js';
-
-import './firebase/firebase.js';
-
-export const store = ConfigStore;
-
+// import {store} from './index.js'
+// const history = useHistory();
 // store.subscribe(()=>{
 //   const state = store.getState();
 //   const view = ExpenseSelector(state.expenses, state.filters);
 //   // console.log(view);
 // });
 
-console.log(process.env.NODE_ENV);
+
+export const store = ConfigStore;
 
 
 class App extends React.Component {
   render(){
     return (
       <Provider store={store}>
-        <AppRouter/>
+        <AppRouter/> 
       </Provider>
-      
     );
   }
 }
 
-export default App;
+export default (App);
 
 // console.log('---------Add Expense----------');
 // store.dispatch(AddExpense({ description: 'Rent', amount: 100, createdAt: -1234 }));

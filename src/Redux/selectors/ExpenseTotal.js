@@ -5,7 +5,7 @@ const ExpenseTotal = (expenses = [])=>{
     // console.log(expenses.length);
     
     const amounts = expenses.map((expense)=> expense.amount);
-    console.log(amounts.reduce((total, num)=> total+num , 0));
+    // console.log(amounts.reduce((total, num)=> total+num , 0));
     
     return amounts.reduce((total, num)=> total+num , 0);
 }

@@ -8,8 +8,9 @@ const RemoveExpense = ({id}={})=>(
 );
 
 export const startRemoveExpense = ({id}={}) => {
-    return async function(dispatch) {
-        await database.ref(`expenses/${id}`).remove();
+    return async function(dispatch, getState) {
+        const uid = getState().Auth.UID;
+        await database.ref(`users/${uid}/expenses/${id}`).remove();
         dispatch(RemoveExpense({id}))
     }
 }

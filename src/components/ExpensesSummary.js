@@ -12,9 +12,7 @@ export const ExpensesSummary = (props)=> {
     </div>
 )};
 
-const mapStateToProps = (state)=> {
-    console.log(state);
-    
+const mapStateToProps = (state)=> {    
     return {
         expensesTotal : getExpenseTotal(state.expenses),
         expensesCount : state.expenses ? state.expenses.length : 0

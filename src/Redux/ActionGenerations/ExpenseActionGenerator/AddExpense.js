@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+
 import {database} from '../../../firebase/firebase.js';
 
 const AddExpense = (expense)=>(
@@ -9,7 +9,9 @@ const AddExpense = (expense)=>(
 );
 
 export const startAddExpense = (expenseData={})=> {
-    return async function(dispatch) {
+    return async function(dispatch, getState) {
+        const uid = getState().Auth.UID
+        console.log(getState());
         const {
             description = '',
             note= '',
@@ -18,11 +20,7 @@ export const startAddExpense = (expenseData={})=> {
         } = expenseData;
     
         const expense = { description, note, amount,createdAt };
-        const ref = await database.ref('expenses').push(expense);
-        // console.log({
-        //     id: ref.key,
-        //     ...expense
-        // });
+        const ref = await database.ref(`users/${uid}/expenses`).push(expense);
         
         dispatch(AddExpense({
             id: ref.key,
