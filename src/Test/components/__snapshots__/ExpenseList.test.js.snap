@@ -1,41 +1,92 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Testing Expense list component with expense props 1`] = `
-<div>
-  <h1>
-    This is Expense List!
-  </h1>
-  <ExpenseItem
-    amount={20000}
-    createdAt={0}
-    description="Rent"
-    id="1"
-    key="1"
-    note=""
-  />
-  <ExpenseItem
-    amount={1000}
-    createdAt={-345600000}
-    description="Game"
-    id="2"
-    key="2"
-    note=""
-  />
-  <ExpenseItem
-    amount={2500}
-    createdAt={345600000}
-    description="Internet"
-    id="3"
-    key="3"
-    note=""
-  />
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <ExpenseItem
+      amount={20000}
+      createdAt={0}
+      description="Rent"
+      id="1"
+      key="1"
+      note=""
+    />
+    <ExpenseItem
+      amount={1000}
+      createdAt={-345600000}
+      description="Game"
+      id="2"
+      key="2"
+      note=""
+    />
+    <ExpenseItem
+      amount={2500}
+      createdAt={345600000}
+      description="Internet"
+      id="3"
+      key="3"
+      note=""
+    />
+  </div>
 </div>
 `;
 
 exports[`Testing Expense list component without expense props 1`] = `
-<div>
-  <h1>
-    This is Expense List!
-  </h1>
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <div
+      className="list-item list-item--message"
+    >
+      <span>
+        No Expenses
+      </span>
+    </div>
+  </div>
 </div>
 `;

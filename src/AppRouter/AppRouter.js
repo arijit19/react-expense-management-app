@@ -1,16 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 // import { Router, Route, Switch} from 'react-router';
-import { BrowserRouter as Router,Route, Switch, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router,Route, Switch} from 'react-router-dom';
 import {createBrowserHistory} from 'history'
 
 import  { SetAuthAction } from '../Redux/Actions/AuthActions.js'
 import {firebase} from '../firebase/firebase.js';
-import Header from '../components/Header.js';
 import Dashboard from '../components/DashboardPage.js';
 import CreateExpense from '../components/CreateExpensePage.js';
 import EditExpense from '../components/EditExpensePage.js';
-import Help from '../components/HelpPage.js';
 import PageNotFound from '../components/PageNotFound.js';
 import LoginPage from '../components/LoginPage.js';
 import PrivateRoute from './PrivateRoute.js';
@@ -41,14 +39,11 @@ export const history = createBrowserHistory();
       return (
         <Router>
         <div>
-          {/* {!this.props.UID ? <Redirect to='/'/> : <Header/>} */}
           <Switch>
-            {/* <Route path='/' exact={true} >{this.props.UID ? <Redirect to='/dashboard'/> : <LoginPage/> } </Route> */}
             <PublicRoute exact path='/' component={LoginPage}/>
             <PrivateRoute path='/dashboard' component={Dashboard}/>
             <PrivateRoute path='/create' component={CreateExpense}/>
             <PrivateRoute path="/edit/:id" component={EditExpense}/> 
-            <PrivateRoute path='/help' component={Help} />
             <Route component={PageNotFound}/>
           </Switch>
         </div>

@@ -6,9 +6,9 @@ import ExpensesSummary from './ExpensesSummary.js'
 
 const Dashboard = ()=>(
    <div>
-         <ExpensesSummary/>
-        <ExpenseFilters/>
-        <ExpenseList/>
+      <ExpensesSummary/>
+      <ExpenseFilters/>
+      <ExpenseList/>
    </div>
 );
 

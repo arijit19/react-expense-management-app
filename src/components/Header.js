@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink, withRouter} from 'react-router-dom';
+import {Link,  withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import { StartLogoutAction} from '../firebase/Actions/LogoutAction.js'
@@ -26,12 +26,16 @@ export class Header extends React.Component {
 
   render() {
     return (
-      <header>
-        <h1>Expense Tracker</h1>
-        <p><NavLink exact activeClassName='active-class' to='/' >Home Page</NavLink></p>
-        <p><NavLink activeClassName='active-class' to='/create'>Add Expense</NavLink></p>
-        <p><NavLink activeClassName='active-class' to='/help'>Help Page</NavLink></p>
-        <button onClick={this.handleLogoutClick}>Logout</button>
+      <header className='header'>
+       <div className='content-container'>
+         <div className='header__content'>
+            {/* <p><NavLink exact activeClassName='active-class' to='/' >Home Page</NavLink></p> */}
+            <Link to='/dashboard' className='header__title'>
+              <h1>Expense Tracker</h1>
+            </Link>
+            <button onClick={this.handleLogoutClick} className='button button--link'>Logout</button>
+         </div>
+       </div>
       </header>
   );
   }

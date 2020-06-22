@@ -1,15 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Testing Expenses summary render component 1`] = `
-<div>
-  <p>
-    Viewing : 
-    3
-     
-    expenses
-    . Total Expense: 
-    $23,500.00
-     
-  </p>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing : 
+      <span>
+        3
+      </span>
+        
+      expenses
+      . Total Expense: 
+      <span>
+        $23,500.00
+      </span>
+       
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="button"
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;

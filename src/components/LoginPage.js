@@ -24,8 +24,12 @@ export class LoginPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <button onClick={this.handleLoginClick}>Login</button>
+            <div className='box-layout'>
+                <div className='box-layout__box'>
+                    <h1 className='box-layout__title'>Expense Tracker</h1>
+                    <p>Its time to keep your expense on track...</p>
+                    <button onClick={this.handleLoginClick} className='button'>Login with Google</button>
+                </div>
             </div>
         )        
     }

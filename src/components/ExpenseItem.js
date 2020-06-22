@@ -5,9 +5,13 @@ import { Link } from 'react-router-dom';
 
 const ExpenseItem = ({ id, description, amount, createdAt})=> (
     <div>
-        <h3><Link to={`/edit/:${id}`}>Description</Link> : {description}</h3>
-        <p>Amount       : {numeral(amount).format('$0,0.0000')}</p>
-        <p>CreateAt     : {moment(createdAt).format('Do MMM YYYY')}</p>
+        <Link to={`/edit/:${id}`} className='list-item'>
+            <div>
+                <h3 className='list-item__title'>{description}</h3>
+                <span className='list-item__sub-title'>{moment(createdAt).format('Do MMM YYYY')}</span>
+            </div>
+            <h3 className='list-item__data'>{numeral(amount).format('$0,0.00')}</h3>
+        </Link>
     </div>
 );
 

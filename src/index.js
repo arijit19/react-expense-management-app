@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './App.scss';
 import App  from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -9,9 +10,10 @@ import {StartFetchExpense} from './Redux/Actions/ExpenseActions.js'
 import {firebase} from './firebase/firebase.js';
 import ConfigStore from './Redux/store/Store.js';
 import  { SetAuthAction } from './Redux/Actions/AuthActions.js'
+import LoadingPage from './components/LoadingPage.js'
 
 export const store = ConfigStore;
-ReactDOM.render(<p>Loading......</p>,document.getElementById('root'));
+ReactDOM.render(<LoadingPage/>,document.getElementById('root'));
 
 async function run() {
   firebase.auth().onAuthStateChanged( async function(user){

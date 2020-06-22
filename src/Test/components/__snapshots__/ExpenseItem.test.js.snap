@@ -2,22 +2,27 @@
 
 exports[`Test Expense item component 1`] = `
 <div>
-  <h3>
-    <Link
-      to="/edit/:1"
+  <Link
+    className="list-item"
+    to="/edit/:1"
+  >
+    <div>
+      <h3
+        className="list-item__title"
+      >
+        Rent
+      </h3>
+      <span
+        className="list-item__sub-title"
+      >
+        1st Jan 1970
+      </span>
+    </div>
+    <h3
+      className="list-item__data"
     >
-      Description
-    </Link>
-     : 
-    Rent
-  </h3>
-  <p>
-    Amount       : 
-    $20,000.0000
-  </p>
-  <p>
-    CreateAt     : 
-    1st Jan 1970
-  </p>
+      $20,000.00
+    </h3>
+  </Link>
 </div>
 `;
