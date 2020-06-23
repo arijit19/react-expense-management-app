@@ -1,8 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-
-import { render } from '@testing-library/react';
-
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 

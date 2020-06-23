@@ -14,6 +14,7 @@ const ExpenseSelector = (expenses, {text, sortBy, startDate, endDate})=> {
         } else if(sortBy === 'amount') {
             return a.amount < b.amount ? 1 : -1 ;
         }
+        return a.createdAt < b.createdAt ? 1 : -1 ;
     });
 };
 

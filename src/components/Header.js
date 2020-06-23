@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 
 import { StartLogoutAction} from '../firebase/Actions/LogoutAction.js'
 import  { SetAuthAction } from '../Redux/Actions/AuthActions.js'
-import {firebase} from '../firebase/firebase.js'
 
 export class Header extends React.Component {
 

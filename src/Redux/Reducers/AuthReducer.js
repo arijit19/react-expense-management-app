@@ -1,8 +1,3 @@
-import {firebase} from '../../firebase/firebase.js';
-import '../selectors/AuthSelector.js';
-
-import AuthSelector from '../selectors/AuthSelector.js';
-
 
 const AuthReducer = (state = {}, action)=> {
     switch (action.type) {
